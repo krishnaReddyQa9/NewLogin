@@ -3,237 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Dashboard</title>
-    <style>
-        html {
-            background-color: wheat;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: url('https://th.bing.com/th/id/OIP.wqRocdRsiuxDVQJ-fbdveAHaEo?rs=1&pid=ImgDetMain') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container, .login-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            max-width: 350px;
-            margin: 100px auto;
-            text-align: center;
-            background-color: rgba(93, 91, 95, 0.212);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-        .sidebar {
-            width: 200px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #333;
-            height: 100%;
-            padding-top: 20px;
-            display: none;
-        }
-        .sidebar h2, .sidebar ul {
-            color: white;
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar ul li {
-            padding: 10px;
-            text-align: left;
-        }
-        .sidebar ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        .main-content {
-            margin-left: 220px;
-            padding: 20px;
-            display: none;
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            width: 300px;
-        }
-        .popup-content {
-            text-align: center;
-        }
-        .popup .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-        }
-        .btn {
-            width: 48%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            background-color: #945785;
-            cursor: pointer;
-            margin: 5px 1%;
-        }
-        .btn:hover {
-            background-color: #095d25;
-        }
-        .forgot-password {
-            display: block;
-            margin-top: 10px;
-            color: #a30b15;
-            text-decoration: none;
-        }
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Bhadra Reddy Quality Chicken</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Login Form -->
-    <div class="container" id="loginPage">
-        <div class="login-box">
-            <img src="https://th.bing.com/th/id/OIP.HgeiNtQYvvKrtjFpGo5dkgHaDp?rs=1&pid=ImgDetMain" alt="project on track" class="img-responsive" style="width: 100px !important; display: inline;">
-            <h2>Login</h2>
-            <form id="loginForm">
-                <div class="textbox">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="textbox">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div class="textbox">
-                    <label for="companyCode">Company Code:</label>
-                    <input type="text" id="companyCode" name="companyCode" required>
-                </div>
-                <button type="submit" class="btn">Login</button>
-                <button type="reset" class="btn">Reset</button>
-            </form>
-            <a href="#" class="forgot-password">Forgot Password?</a>
+    <header>
+        <div class="header-container">
+            <img src="images/logo-left.jpg" alt="Logo Left" class="header-image">
+            <h1>Bhadra Reddy Quality Chicken</h1>
+            <img src="images/logo-right.jpg" alt="Logo Right" class="header-image">
         </div>
-    </div>
+        <p>Main Road Chillakally</p>
+        <div class="language-switcher">
+            <button onclick="changeLanguage('en')">English</button>
+            <button onclick="changeLanguage('te')">తెలుగు</button>
+        </div>
+    </header>
 
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <h2>Project On Track</h2>
+    <nav>
         <ul>
-            <li><a href="https://test.rajutech.com/enterprise#!/enterprise">Enterprise</a></li>
-            <li><a href="https://test.rajutech.com/enterprise#!/epsproject">Projects</a></li>
-            <li><a href="https://test.rajutech.com/enterprise#!/document">Documents</a></li>
-            <li><a href="https://test.rajutech.com/enterprise#!/activityscheduledatatable">Schedules</a></li>
-            <li><a href="https://test.rajutech.com/enterprise#!/precontractlist">Procurement</a></li>
-            <li><a href="https://test.rajutech.com/enterprise#!/empregister">Resources</a></li>
-            <li><a href="https://test.rajutech.com/enterprise#!/listofempattendence">Production Records</a></li>
-            <li><a href="https://test.rajutech.com/enterprise#!/co">Change Orders</a></li>
-            <li><a href="https://test.rajutech.com/enterprise#!/vendorinvoices">Vendor Invoices</a></li>
-            <li><a href="https://test.rajutech.com/enterprise#!/masterdashboards">Dashboard</a></li>
-            <li><a href="https://test.rajutech.com/enterprise#!/PrecontractslistCurrentStatus">Reports</a></li>
-            <li><a href="https://test.rajutech.com/enterprise#!/empreqtransfer1">Requests & Approvals</a></li>
-            <li><a href="https://test.rajutech.com/enterprise#!/clientroles">Admin</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-    </div>
+    </nav>
 
-    <!-- Main Content -->
-    <div class="main-content" id="dashboard">
-        <header>
-            <h1>Welcome, Krishna!</h1>
-        </header>
-        <footer>
-            <p>Project On Track © 2024 Raju Tech Pty. Ltd.</p>
-        </footer>
-    </div>
-
-    <!-- Welcome Popup -->
-    <div id="welcomePopup" class="popup">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <h2>Welcome to the ProjectOnTrack Dashboard!</h2>
-            <p>We are glad to have you here. Explore and manage your content efficiently.</p>
+    <section id="products">
+        <h2 data-en="Our Products" data-te="మా ఉత్పత్తులు">Our Products</h2>
+        <div class="product-gallery">
+            <img src="images/fresh-chicken.jpg" alt="Fresh Chicken">
+            <img src="images/chicken-breed1.jpg" alt="Chicken Breed 1">
+            <img src="images/chicken-breed2.jpg" alt="Chicken Breed 2">
+            <img src="images/chicken-breed3.jpg" alt="Chicken Breed 3">
         </div>
-    </div>
+    </section>
+
+    <section id="about">
+        <h2 data-en="About Us" data-te="మా గురించి">About Us</h2>
+        <p data-en="12 years of experience with customer satisfaction, providing quality and fresh chicken for events, parties, and weddings."
+           data-te="కస్టమర్ సంతృప్తితో 12 సంవత్సరాల అనుభవం, ఇవెంట్లు, పార్టీల కోసం నాణ్యమైన మరియు తాజా చికెన్ అందించడం."></p>
+    </section>
+
+    <section id="contact">
+        <h2 data-en="Contact Us" data-te="మమ్మల్ని సంప్రదించండి">Contact Us</h2>
+        <p><strong>Bhadra Reddy:</strong> 99667767676</p>
+        <p><strong>Ragavareddy:</strong> 776767367637</p>
+        <p><strong>Email:</strong> Raghava@gmail.com</p>
+    </section>
+
+    <footer>
+        <p>Find us on <a href="https://www.google.com/maps">Google Maps</a></p>
+        <p>Contact: 746616000</p>
+    </footer>
 
     <script>
-        // Script to handle the login
-        document.addEventListener('DOMContentLoaded', function() {
-            const loginForm = document.getElementById('loginForm');
-
-            loginForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevents the form from being submitted to a server
-
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
-                const companyCode = document.getElementById('companyCode').value;
-
-                // You can add further validation here if needed
-
-                if (username && password && companyCode) {
-                    alert(`Username: ${username}\nPassword: ${password}\nCompany Code: ${companyCode}`);
-                    document.getElementById("loginPage").style.display = "none";
-                    document.getElementById("sidebar").style.display = "block";
-                    document.getElementById("dashboard").style.display = "block";
-                    document.getElementById("welcomePopup").style.display = "block";
-                } else {
-                    alert('Please fill in all fields.');
-                }
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-en]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
             });
-
-            // Handle reset button click (optional)
-            loginForm.addEventListener('reset', function() {
-                // If you want to add any special behavior on reset, you can do so here
-                console.log('Form reset');
-            });
-        });
-
-        // Script to close the welcome popup
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get the popup and the close button
-            const popup = document.getElementById('welcomePopup');
-            const closeButton = document.querySelector('.popup .close');
-
-            // Show the popup when the page loads
-            popup.style.display = 'flex';
-
-            // Close the popup when the close button is clicked
-            closeButton.addEventListener('click', function() {
-                popup.style.display = 'none';
-            });
-
-            // Optionally, close the popup if the user clicks outside of the popup content
-            window.addEventListener('click', function(event) {
-                if (event.target === popup) {
-                    popup.style.display = 'none';
-                }
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const logoutButton = document.getElementById('logoutButton');
-            
-            logoutButton.addEventListener('click', function(event) {
-                event.preventDefault();
-
-                window.location.href = 'login.html'; // Replace 'login.html' with your actual login page URL or route
-            });
-        });
+        }
     </script>
 </body>
 </html>
